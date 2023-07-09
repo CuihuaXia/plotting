@@ -2,6 +2,12 @@
 
 This is an R package for plotting using ggplot2 in R.
 
+## Dependencies
+Need to install the `ggplot2` R package first.
+```R
+BiocManager::install("ggplot2")
+```
+
 ## Installation
 
 ```R
