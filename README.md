@@ -14,6 +14,6 @@ library(plotting)
 
 + `sep()`: Print out a separation line.
 
-<img width="377" alt="image" src="https://github.com/CuihuaXia/plotting/assets/31227230/01108c6b-c3c8-4644-9ae8-497a09c9f2d0">
+<img width="376" alt="image" src="https://github.com/CuihuaXia/plotting/assets/31227230/74c42560-e45c-47ac-9959-01a8149bc2bf">
 
 + `my_theme()`: Use my own theme for ggplot2 plotting.
