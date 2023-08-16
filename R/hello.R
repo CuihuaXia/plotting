@@ -71,3 +71,30 @@ my_theme <- function() {
 # # apply my theme to the plot
 # ggplot() +
 #     my_theme() 
+
+
+#####################################
+# Function to copy data to clipboard
+#####################################
+copy_to_clipboard <- function(data) {
+    if (is.character(data)) {
+    text <- data
+    } else if (is.data.frame(data)) {
+    text <- capture.output(write.table(data, sep="\t", row.names=FALSE, col.names=TRUE, quote=FALSE))
+    } else {
+    stop("Unsupported data type. Supported types: character, data.frame")
+    }
+
+    system2("pbcopy", input = text)
+}
+
+# Test with character variable
+my_character <- "Hello, world!"
+copy_to_clipboard(my_character)
+
+# Test with data frame
+my_dataframe <- data.frame(
+    Name = c("Alice", "Bob", "Charlie"),
+    Age = c(25, 30, 28)
+)
+copy_to_clipboard(my_dataframe)
