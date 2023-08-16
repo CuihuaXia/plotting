@@ -74,7 +74,7 @@ my_theme <- function() {
 
 
 #####################################
-# Function to copy data to clipboard
+# Function to copy data to the clipboard
 #####################################
 copy_to_clipboard <- function(data) {
     if (is.character(data)) {
@@ -88,11 +88,11 @@ copy_to_clipboard <- function(data) {
     system2("pbcopy", input = text)
 }
 
-# Test with character variable
+# Test with a character variable
 my_character <- "Hello, world!"
 copy_to_clipboard(my_character)
 
-# Test with data frame
+# Test with a data frame
 my_dataframe <- data.frame(
     Name = c("Alice", "Bob", "Charlie"),
     Age = c(25, 30, 28)
