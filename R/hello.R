@@ -33,11 +33,11 @@ library(ggplot2)
 my_theme <- function() {
   theme_bw() +
     theme(
-      # panel.grid = element_blank(),
-      panel.grid.major = element_line(color = "#d8d8d8d9",
-                                      size = 0.12),
-      panel.grid.minor = element_line(color = "#d8d8d8d9",
-                                      size = 0.12),
+      panel.grid = element_blank(),
+      # panel.grid.major = element_line(color = "#d8d8d8d9",
+      #                                size = 0.12),
+      # panel.grid.minor = element_line(color = "#d8d8d8d9",
+      #                                size = 0.12),
       legend.position = "right",
       # legend.position = "none",
       legend.text = element_text(size = 28),
