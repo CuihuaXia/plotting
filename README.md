@@ -12,6 +12,9 @@ library(ggplot2)
 ```R
 library(devtools)
 devtools::install_github("CuihuaXia/plotting", force = TRUE)
+## or use `remotes`
+# library(remotes)
+# remotes::install_github("CuihuaXia/plotting", force = TRUE)
 library(plotting)
 ```
 
