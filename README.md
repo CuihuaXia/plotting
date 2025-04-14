@@ -1,6 +1,9 @@
 # plotting
 This is an R package for plotting using ggplot2 in R.
 
+![badge][badge-r]
+[badge-r]: https://img.shields.io/badge/r-%23276DC3.svg?style=flat&logo=r&logoColor=white
+
 ## Dependencies
 Need to install and load the `ggplot2` R package first.
 ```R
