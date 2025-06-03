@@ -11,6 +11,7 @@ Need to install and load the `ggplot2` R package first.
 ```R
 BiocManager::install("ggplot2")
 library(ggplot2)
+library(grid)
 ```
 
 ## Install and load the package
