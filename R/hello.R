@@ -54,6 +54,7 @@ library(grid)  # 用于 unit()
 #                                 margin = margin(15 * scale, 0, 15 * scale, 0)),
 #       strip.background = element_rect(fill = "#d8d8d8d9",
 #                                       color = "black", linetype = 'solid',
+
 #                                       linewidth = 1 * scale)
 #     )
 # }
@@ -95,15 +96,14 @@ my_theme <- function(base_size = 12, scale = 1) {
       legend.key.size   = unit(1 * scale, "lines"),
      
       ## Facet
-      strip.text        = element_text(size = rel(1.05 * scale), face = "bold",
-                                       margin = margin(5 * scale, 0, 5 * scale, 0)),
-      strip.background  = element_blank()
+      strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(5 * scale, 0, 5 * scale, 0)),
+      # strip.background  = element_blank()
+      strip.background  = element_rect(fill = "grey92", colour = "black", linetype = 'solid', linewidth = 0.8 * scale)
     )
 }
 # # apply my theme to the plot
 # ggplot() +
 #     my_theme(scale = 1, base_size = 12)  # 可调字号以及整体缩放比例
-
 
 
 
