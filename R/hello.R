@@ -84,7 +84,7 @@ my_theme <- function(base_size = 12, scale = 1) {
       axis.title       = element_text(size = rel(1.0 * scale), face = "bold", colour = "black"),
       axis.text        = element_text(size = rel(0.85 * scale), colour = "black"),
       axis.line        = element_line(linewidth = 0.5 * scale, colour = "black"),
-      axis.ticks       = element_line(linewidth = 0.5 * scale),
+      axis.ticks       = element_line(linewidth = 0.5 * scale, colour = "black"),
       axis.ticks.length= unit(0.15 * scale, "lines"),
 
       ## Legend
