@@ -70,8 +70,7 @@ my_theme <- function(base_size = 12, scale = 1) {
     theme(
       ## Layout
       panel.grid       = element_blank(),
-      # panel.border     = element_rect(colour = "black", fill = NA, linewidth = 0.4 * scale),
-      panel.border     = element_blank(),
+      panel.border     = element_rect(colour = "black", fill = NA, linewidth = 0.5 * scale),
       panel.background = element_blank(),
       plot.background  = element_blank(),
 
