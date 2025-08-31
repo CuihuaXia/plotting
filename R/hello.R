@@ -109,9 +109,10 @@ library(grid)  # 用于 unit()
 
 
 
-my_theme <- function(base_size = 12, scale = 1,
-                     base_family = "Arial") {
-  theme_bw(base_size = base_size, base_family = base_family) +
+my_theme <- function(base_size = 12, scale = 1) { 
+  theme_bw(base_size = base_size) +
+
+
     theme(
       ## Basic layout
       panel.grid.major = element_blank(),  # Remove major gridlines
