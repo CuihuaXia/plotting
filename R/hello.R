@@ -109,7 +109,7 @@ library(grid)  # 用于 unit()
 
 
 
-my_theme <- function(base_size = 12, scale = 1, base_family = "Arial") {
+my_theme <- function(base_size = 12, scale = 1, base_family = NULL) {
   theme_bw(base_size = base_size, base_family = base_family) +
     theme(
       ## Layout
@@ -121,6 +121,11 @@ my_theme <- function(base_size = 12, scale = 1, base_family = "Arial") {
 
       ## Axis
       axis.title       = element_text(size = 1.0 * scale, face = "bold", colour = "black", family = base_family),
+
+
+
+
+
       axis.text        = element_text(size = 0.85 * scale, colour = "black", family = base_family),
       axis.line        = element_line(linewidth = 0.6 * scale, colour = "black"),
       axis.ticks       = element_line(linewidth = 0.6 * scale),
@@ -142,7 +147,7 @@ my_theme <- function(base_size = 12, scale = 1, base_family = "Arial") {
 }
 # # apply my theme to the plot
 # ggplot() +
-#     my_theme(scale = 1, base_size = 12, base_family = "Arial")  # 可调比例
+#     my_theme(scale = 1, base_size = 12, base_family = NULL)  # 可调比例
 
 
 
