@@ -109,45 +109,40 @@ library(grid)  # 用于 unit()
 
 
 
-
-
-
-
-
-
-
 my_theme <- function(base_size = 12, scale = 1) {
   theme_bw(base_size = base_size) +
     theme(
-      ## Overall layout
-      panel.grid       = element_blank(),  # Remove gridlines
+      ## Layout
+      panel.grid       = element_blank(),
       panel.border     = element_rect(colour = "black", fill = NA, linewidth = 0.6 * scale),
-      panel.background = element_blank(),  # Transparent panel background
-      plot.background  = element_blank(),  # Transparent plot background
+      panel.background = element_blank(),
+      plot.background  = element_blank(),
 
-      ## Plot title
-      plot.title       = element_text(size = 1.3 * scale, face = "bold", hjust = 0.5,
-                                      margin = margin(b = 8 * scale)),  # Center title with bottom margin
+      ## Title
+      plot.title       = element_text(
+        size = rel(1.3 * scale), face = "bold", hjust = 0.5,
+        margin = margin(b = 8 * scale)
+      ),
 
       ## Axes
-      axis.title       = element_text(size = 1.0 * scale, face = "bold", colour = "black"),  # Axis titles
-      axis.text        = element_text(size = 0.85 * scale, colour = "black"),                # Axis text
-      axis.line        = element_line(linewidth = 0.6 * scale, colour = "black"),            # Axis lines
-      axis.ticks       = element_line(linewidth = 0.6 * scale),                              # Axis ticks
-      axis.ticks.length= unit(0.15 * scale, "lines"),                                        # Tick length
+      axis.title       = element_text(size = rel(1.0 * scale), face = "bold", colour = "black"),
+      axis.text        = element_text(size = rel(0.85 * scale),               colour = "black"),
+      axis.line        = element_line(linewidth = 0.6 * scale, colour = "black"),
+      axis.ticks       = element_line(linewidth = 0.6 * scale),
+      axis.ticks.length= unit(0.15 * scale, "lines"),
 
       ## Legend
-      legend.position   = "right",                                                           # Place legend on the right
-      legend.title      = element_text(size = 0.95 * scale, face = "bold"),                  # Legend title
-      legend.text       = element_text(size = 0.85 * scale),                                 # Legend text
-      legend.key        = element_blank(),                                                   # Transparent legend keys
-      legend.background = element_blank(),                                                   # Transparent legend background
-      legend.key.size   = unit(0.9 * scale, "lines"),                                        # Legend key size
+      legend.position   = "right",
+      legend.title      = element_text(size = rel(0.95 * scale), face = "bold"),
+      legend.text       = element_text(size = rel(0.85 * scale)),
+      legend.key        = element_blank(),
+      legend.background = element_blank(),
+      legend.key.size   = unit(0.9 * scale, "lines"),
 
-      ## Facet labels
-      strip.text        = element_text(size = 1.05 * scale, face = "bold",
-                                       margin = margin(5 * scale, 0, 5 * scale, 0)),         # Facet text with margins
-      strip.background  = element_blank()                                                    # Remove facet background
+      ## Facet
+      strip.text        = element_text(size = rel(1.05 * scale), face = "bold",
+                                       margin = margin(5 * scale, 0, 5 * scale, 0)),
+      strip.background  = element_blank()
     )
 }
 # # apply my theme to the plot
