@@ -109,45 +109,50 @@ library(grid)  # 用于 unit()
 
 
 
-my_theme <- function(base_size = 12, scale = 1, base_family = NULL) {
-  theme_bw(base_size = base_size, base_family = base_family) +
+
+
+
+
+
+
+
+my_theme <- function(base_size = 12, scale = 1) {
+  theme_bw(base_size = base_size) +
     theme(
-      ## Layout
-      panel.grid       = element_blank(),
+      ## Overall layout
+      panel.grid       = element_blank(),  # Remove gridlines
       panel.border     = element_rect(colour = "black", fill = NA, linewidth = 0.6 * scale),
+      panel.background = element_blank(),  # Transparent panel background
+      plot.background  = element_blank(),  # Transparent plot background
 
-      ## Title
-      plot.title       = element_text(size = 1.3 * scale, face = "bold", hjust = 0.5, family = base_family),
+      ## Plot title
+      plot.title       = element_text(size = 1.3 * scale, face = "bold", hjust = 0.5,
+                                      margin = margin(b = 8 * scale)),  # Center title with bottom margin
 
-      ## Axis
-      axis.title       = element_text(size = 1.0 * scale, face = "bold", colour = "black", family = base_family),
-
-
-
-
-
-      axis.text        = element_text(size = 0.85 * scale, colour = "black", family = base_family),
-      axis.line        = element_line(linewidth = 0.6 * scale, colour = "black"),
-      axis.ticks       = element_line(linewidth = 0.6 * scale),
-      axis.ticks.length= unit(0.15 * scale, "lines"),
+      ## Axes
+      axis.title       = element_text(size = 1.0 * scale, face = "bold", colour = "black"),  # Axis titles
+      axis.text        = element_text(size = 0.85 * scale, colour = "black"),                # Axis text
+      axis.line        = element_line(linewidth = 0.6 * scale, colour = "black"),            # Axis lines
+      axis.ticks       = element_line(linewidth = 0.6 * scale),                              # Axis ticks
+      axis.ticks.length= unit(0.15 * scale, "lines"),                                        # Tick length
 
       ## Legend
-      legend.position   = "right",
-      legend.title      = element_text(size = 0.95 * scale, face = "bold", family = base_family),
-      legend.text       = element_text(size = 0.85 * scale, family = base_family),
-      legend.key        = element_blank(),
-      legend.background = element_blank(),
-      legend.key.size   = unit(0.9 * scale, "lines"),
+      legend.position   = "right",                                                           # Place legend on the right
+      legend.title      = element_text(size = 0.95 * scale, face = "bold"),                  # Legend title
+      legend.text       = element_text(size = 0.85 * scale),                                 # Legend text
+      legend.key        = element_blank(),                                                   # Transparent legend keys
+      legend.background = element_blank(),                                                   # Transparent legend background
+      legend.key.size   = unit(0.9 * scale, "lines"),                                        # Legend key size
 
-      ## Facet
-      strip.text        = element_text(size = 1.05 * scale, face = "bold", family = base_family,
-                                       margin = margin(5 * scale, 0, 5 * scale, 0)),
-      strip.background  = element_blank()
+      ## Facet labels
+      strip.text        = element_text(size = 1.05 * scale, face = "bold",
+                                       margin = margin(5 * scale, 0, 5 * scale, 0)),         # Facet text with margins
+      strip.background  = element_blank()                                                    # Remove facet background
     )
 }
 # # apply my theme to the plot
 # ggplot() +
-#     my_theme(scale = 1, base_size = 12, base_family = NULL)  # 可调比例
+#     my_theme(scale = 1, base_size = 12)  # 可调比例
 
 
 
