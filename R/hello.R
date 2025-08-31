@@ -76,31 +76,67 @@ library(grid)  # 用于 unit()
 # #     my_theme() 
 
 
-my_theme <- function(scale = 1) {
-  theme_bw() +
+
+
+
+# my_theme <- function(scale = 1) {
+#   theme_bw() +
+#     theme(
+#       panel.grid = element_blank(),
+#       legend.position = "right",
+#       legend.text = element_text(size = 28 * scale),
+#       legend.title = element_text(size = 30 * scale, face = "bold"),
+#       legend.key.size = unit(3.5 * scale, "lines"),
+#       axis.text = element_text(size = 24 * scale, face = "bold",
+#                                colour = "grey20", hjust = .5, vjust = .5),
+#       axis.title = element_text(size = 26 * scale, face = "bold",
+#                                 colour = "grey20", angle = 0, hjust = .5, vjust = 0),
+#       axis.line = element_line(size = 1 * scale, color = "black"),
+#       axis.ticks = element_line(size = 2 * scale),
+#       plot.title = element_text(size = 30 * scale, hjust = 0.5, face = "bold"),
+#       strip.text = element_text(size = 34 * scale, face = "bold",
+#                                 margin = margin(15 * scale, 0, 15 * scale, 0)),
+#       strip.background = element_rect(fill = "#d8d8d8d9",
+#                                       color = "black", linetype = 'solid',
+#                                       linewidth = 1 * scale)
+#     )
+# }
+# # # apply my theme to the plot
+# # ggplot() +
+# #     my_theme(scale = 0.8)  # 可调比例
+
+
+
+
+
+
+my_theme <- function(base_size = 12, scale = 1) {
+  theme_bw(base_size = base_size) +
     theme(
-      panel.grid = element_blank(),
-      legend.position = "right",
-      legend.text = element_text(size = 28 * scale),
-      legend.title = element_text(size = 30 * scale, face = "bold"),
-      legend.key.size = unit(3.5 * scale, "lines"),
-      axis.text = element_text(size = 24 * scale, face = "bold",
-                               colour = "grey20", hjust = .5, vjust = .5),
-      axis.title = element_text(size = 26 * scale, face = "bold",
-                                colour = "grey20", angle = 0, hjust = .5, vjust = 0),
-      axis.line = element_line(size = 1 * scale, color = "black"),
-      axis.ticks = element_line(size = 2 * scale),
-      plot.title = element_text(size = 30 * scale, hjust = 0.5, face = "bold"),
-      strip.text = element_text(size = 34 * scale, face = "bold",
-                                margin = margin(15 * scale, 0, 15 * scale, 0)),
-      strip.background = element_rect(fill = "#d8d8d8d9",
-                                      color = "black", linetype = 'solid',
-                                      linewidth = 1 * scale)
+      panel.grid       = element_blank(),
+      legend.position  = "right",
+
+      plot.title       = element_text(size = rel(1.3*scale), face = "bold", hjust = 0.5),
+
+      axis.title       = element_text(size = rel(1.0*scale), face = "bold", colour = "grey20"),
+      axis.text        = element_text(size = rel(0.85*scale), face = "bold", colour = "grey20"),
+      axis.line        = element_line(linewidth = 0.6*scale, colour = "black"),
+      axis.ticks       = element_line(linewidth = 0.6*scale),
+
+      legend.title     = element_text(size = rel(0.95*scale), face = "bold"),
+      legend.text      = element_text(size = rel(0.85*scale)),
+      legend.key.size  = unit(0.9*scale, "lines"),
+
+      strip.text       = element_text(size = rel(1.15*scale), face = "bold",
+                                      margin = margin(5*scale, 0, 5*scale, 0)),
+      strip.background = element_rect(fill = "#d8d8d8d9", colour = "black", linewidth = 0.6*scale)
     )
 }
+
 # # apply my theme to the plot
 # ggplot() +
 #     my_theme(scale = 0.8)  # 可调比例
+
 
 
 
