@@ -109,54 +109,40 @@ library(grid)  # 用于 unit()
 
 
 
-my_theme <- function(base_size = 12, scale = 1) { 
-  theme_bw(base_size = base_size) +
-
+my_theme <- function(base_size = 12, scale = 1, base_family = "Arial") {
+  theme_bw(base_size = base_size, base_family = base_family) +
     theme(
-      ## Basic layout
-      panel.grid.major = element_blank(),  # Remove major gridlines
-      panel.grid.minor = element_blank(),  # Remove minor gridlines
+      ## Layout
       panel.grid       = element_blank(),
       panel.border     = element_rect(colour = "black", fill = NA, linewidth = 0.6 * scale),
-      
-      ## Plot title (removed; use figure captions instead)
-      # plot.title = element_blank(),
-      plot.title       = element_text(size = rel(1.3*scale), face = "bold", hjust = 0.5),
-      
-      ## Axis settings
-      axis.title = element_text(
-        size = rel(1.0 * scale),
-        face = "bold",
-        colour = "black"
-      ),
-      axis.text = element_text(
-        size = rel(0.85 * scale),
-        colour = "black"
-      ),
-      axis.line         = element_line(linewidth = 0.6 * scale, colour = "black"),
-      axis.ticks        = element_line(linewidth = 0.6 * scale),
-      axis.ticks.length = unit(0.15 * scale, "cm"),
-      
-      ## Legend settings
+
+      ## Title
+      plot.title       = element_text(size = 1.3 * scale, face = "bold", hjust = 0.5, family = base_family),
+
+      ## Axis
+      axis.title       = element_text(size = 1.0 * scale, face = "bold", colour = "black", family = base_family),
+      axis.text        = element_text(size = 0.85 * scale, colour = "black", family = base_family),
+      axis.line        = element_line(linewidth = 0.6 * scale, colour = "black"),
+      axis.ticks       = element_line(linewidth = 0.6 * scale),
+      axis.ticks.length= unit(0.15 * scale, "lines"),
+
+      ## Legend
       legend.position   = "right",
-      legend.title      = element_text(size = rel(0.95 * scale), face = "bold"),
-      legend.text       = element_text(size = rel(0.85 * scale)),
-      legend.key        = element_blank(),  # Transparent legend keys
-      legend.background = element_blank(),  # Transparent legend background
+      legend.title      = element_text(size = 0.95 * scale, face = "bold", family = base_family),
+      legend.text       = element_text(size = 0.85 * scale, family = base_family),
+      legend.key        = element_blank(),
+      legend.background = element_blank(),
       legend.key.size   = unit(0.9 * scale, "lines"),
-      
-      ## Facet labels
-      strip.text = element_text(
-        size = rel(1.05 * scale),
-        face = "bold",
-        margin = margin(5 * scale, 0, 5 * scale, 0)
-      ),
-      strip.background = element_blank()  # Remove facet background
+
+      ## Facet
+      strip.text        = element_text(size = 1.05 * scale, face = "bold", family = base_family,
+                                       margin = margin(5 * scale, 0, 5 * scale, 0)),
+      strip.background  = element_blank()
     )
 }
 # # apply my theme to the plot
 # ggplot() +
-#     my_theme(base_size = 12, scale = 1)  # 可调比例
+#     my_theme(scale = 1, base_size = 12, base_family = "Arial")  # 可调比例
 
 
 
