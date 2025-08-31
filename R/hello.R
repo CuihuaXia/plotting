@@ -109,33 +109,55 @@ library(grid)  # 用于 unit()
 
 
 
-
-my_theme <- function(base_size = 12, scale = 1) {
-  theme_bw(base_size = base_size) +
+my_theme <- function(base_size = 12, scale = 1,
+                     base_family = "Arial") {
+  theme_bw(base_size = base_size, base_family = base_family) +
     theme(
+      ## Basic layout
+      panel.grid.major = element_blank(),  # Remove major gridlines
+      panel.grid.minor = element_blank(),  # Remove minor gridlines
       panel.grid       = element_blank(),
-      legend.position  = "right",
-
+      panel.border     = element_rect(colour = "black", fill = NA, linewidth = 0.6 * scale),
+      
+      ## Plot title (removed; use figure captions instead)
+      # plot.title = element_blank(),
       plot.title       = element_text(size = rel(1.3*scale), face = "bold", hjust = 0.5),
-
-      axis.title       = element_text(size = rel(1.0*scale), face = "bold", colour = "grey20"),
-      axis.text        = element_text(size = rel(0.85*scale), face = "bold", colour = "grey20"),
-      axis.line        = element_line(linewidth = 0.6*scale, colour = "black"),
-      axis.ticks       = element_line(linewidth = 0.6*scale),
-
-      legend.title     = element_text(size = rel(0.95*scale), face = "bold"),
-      legend.text      = element_text(size = rel(0.85*scale)),
-      legend.key.size  = unit(0.9*scale, "lines"),
-
-      strip.text       = element_text(size = rel(1.15*scale), face = "bold",
-                                      margin = margin(5*scale, 0, 5*scale, 0)),
-      strip.background = element_rect(fill = "#d8d8d8d9", colour = "black", linewidth = 0.6*scale)
+      
+      ## Axis settings
+      axis.title = element_text(
+        size = rel(1.0 * scale),
+        face = "bold",
+        colour = "black"
+      ),
+      axis.text = element_text(
+        size = rel(0.85 * scale),
+        colour = "black"
+      ),
+      axis.line         = element_line(linewidth = 0.6 * scale, colour = "black"),
+      axis.ticks        = element_line(linewidth = 0.6 * scale),
+      axis.ticks.length = unit(0.15 * scale, "cm"),
+      
+      ## Legend settings
+      legend.position   = "right",
+      legend.title      = element_text(size = rel(0.95 * scale), face = "bold"),
+      legend.text       = element_text(size = rel(0.85 * scale)),
+      legend.key        = element_blank(),  # Transparent legend keys
+      legend.background = element_blank(),  # Transparent legend background
+      legend.key.size   = unit(0.9 * scale, "lines"),
+      
+      ## Facet labels
+      strip.text = element_text(
+        size = rel(1.05 * scale),
+        face = "bold",
+        margin = margin(5 * scale, 0, 5 * scale, 0)
+      ),
+      strip.background = element_blank()  # Remove facet background
     )
 }
-
 # # apply my theme to the plot
 # ggplot() +
-#     my_theme(scale = 0.8)  # 可调比例
+#     my_theme(base_size = 12, scale = 1)  # 可调比例
+
 
 
 
