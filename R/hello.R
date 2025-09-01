@@ -92,7 +92,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
 
       ## Legend
       legend.position   = "right",
-      legend.title      = element_text(size = rel(0.95 * scale), face = "bold"),
+      legend.title      = element_text(size = rel(0.95 * scale)),   # , face = "bold"
       legend.text       = element_text(size = rel(0.85 * scale)),
       legend.key        = element_blank(),
       legend.background = element_blank(),
