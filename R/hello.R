@@ -100,7 +100,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
 
       ## Facet
       strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
-      strip.background  = element_rect(fill = "white", colour = NA, linetype = "solid", linewidth = 0.5 * scale),  # grey92  black
+      strip.background  = element_rect(fill = "white", colour = "black", linetype = "solid", linewidth = 0.5 * scale),  # grey92  
       strip.switch.pad.grid = unit(5 * scale, "pt"),
       strip.switch.pad.wrap = unit(5 * scale, "pt")
     )
