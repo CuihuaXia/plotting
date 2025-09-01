@@ -84,7 +84,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
       plot.title       = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
 
       ## Axes
-      axis.title       = element_text(size = rel(1.0 * scale), face = "bold", colour = "black"),
+      axis.title       = element_text(size = rel(1.0 * scale), colour = "black"),   # , face = "bold"
       axis.text        = element_text(size = rel(0.85 * scale), colour = "black"),
       axis.line        = element_line(linewidth = 0.5 * scale, colour = "black"),
       axis.ticks       = element_line(linewidth = 0.5 * scale, colour = "black"),
@@ -99,8 +99,9 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
       legend.key.size   = unit(1 * scale, "lines"),
 
       ## Facet
-      strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
-      strip.background  = element_rect(fill = "white", colour = "black", linetype = "solid", linewidth = 0.5 * scale),  # grey92  
+      strip.text        = element_text(size = rel(1.05 * scale), margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),   # , face = "bold"
+      # strip.background  = element_rect(fill = "grey97", colour = "black", linetype = "solid", linewidth = 0.5 * scale),
+      strip.background  = element_blank(),
       strip.switch.pad.grid = unit(5 * scale, "pt"),
       strip.switch.pad.wrap = unit(5 * scale, "pt")
     )
