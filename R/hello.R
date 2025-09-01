@@ -25,9 +25,9 @@ sep <- function(line) {
 # sep("TEST")
 
 
-######################################################################
-# my_theme() for ggplot2 plotting; this is my theme for the CNS style.
-######################################################################
+#################################################################################################
+# my_theme() for ggplot2 plotting; this is my theme for the CNS journal and the PhD thesis style.
+#################################################################################################
 library(ggplot2)
 library(grid)  # 用于 unit()
 
