@@ -94,10 +94,10 @@ my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
       legend.key.size   = unit(1 * scale, "lines"),
 
       ## Facet
-      strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 10 * scale, l = 0)),
+      strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
       strip.background  = element_rect(fill = "grey92", colour = "black", linetype = "solid", linewidth = 0.5 * scale),
-      strip.switch.pad.grid = unit(10 * scale, "pt"),
-      strip.switch.pad.wrap = unit(10 * scale, "pt")
+      strip.switch.pad.grid = unit(5 * scale, "pt"),
+      strip.switch.pad.wrap = unit(5 * scale, "pt")
     )
 
   # 根据 frame 参数切换
