@@ -137,7 +137,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
       strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 2 * scale, l = 0)),
       strip.background  = element_rect(fill = "grey92", colour = "black", linetype = "solid", linewidth = 0.5 * scale),
       strip.switch.pad.grid = unit(2 * scale, "pt"),
-      strip.switch.pad.wrap = unit(2 * scale, "pt"))
+      strip.switch.pad.wrap = unit(2 * scale, "pt")
     )
 
   # 根据 frame 参数切换
