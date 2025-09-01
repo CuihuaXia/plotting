@@ -74,6 +74,9 @@ my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
       panel.grid       = element_blank(),
       panel.background = element_blank(),
       plot.background  = element_blank(),
+      strip.placement = "outside", 
+      panel.spacing.y = unit(2 * scale, "pt"),
+      panel.spacing.x = unit(2 * scale, "pt")
 
       ## Title
       plot.title       = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
@@ -97,10 +100,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
       strip.text        = element_text(size = rel(1.05 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
       strip.background  = element_rect(fill = "grey92", colour = "black", linetype = "solid", linewidth = 0.5 * scale),
       strip.switch.pad.grid = unit(5 * scale, "pt"),
-      strip.switch.pad.wrap = unit(5 * scale, "pt"),
-      strip.placement = "outside", 
-      panel.spacing.y = unit(2 * scale, "pt"),
-      panel.spacing.x = unit(2 * scale, "pt")
+      strip.switch.pad.wrap = unit(5 * scale, "pt")
     )
 
   # 根据 frame 参数切换
