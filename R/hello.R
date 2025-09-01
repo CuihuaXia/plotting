@@ -75,7 +75,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
       panel.background = element_blank(),
       plot.background  = element_blank(),
       strip.placement = "outside",
-      panel.spacing.y = unit(12 * scale, "pt"),
+      panel.spacing.y = unit(3 * scale, "pt"),
       panel.spacing.x = unit(3 * scale, "pt"),
 
       ## Title
