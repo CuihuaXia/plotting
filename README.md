@@ -16,11 +16,11 @@ library(grid)
 
 ## Install and load the package
 ```R
-library(remotes)
-remotes::install_github("CuihuaXia/plotting", force = TRUE) 
+# library(remotes)
+remotes::install_github("CuihuaXia/plotting", force = TRUE)
 ## or use `devtools`
 # library(devtools)
-# devtools::install_github("CuihuaXia/plotting", force = TRUE)  
+# devtools::install_github("CuihuaXia/plotting", force = TRUE)
 
 library(plotting)
 ```
