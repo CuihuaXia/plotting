@@ -99,7 +99,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
       legend.key.size   = unit(1 * scale, "lines"),
 
       ## Facet
-      strip.text        = element_text(size = rel(1.15 * scale), margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),   # , face = "bold"
+      strip.text        = element_text(size = rel(1.1 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
       # strip.background  = element_rect(fill = "grey97", colour = "black", linetype = "solid", linewidth = 0.5 * scale),
       strip.background  = element_blank(),
       strip.switch.pad.grid = unit(5 * scale, "pt"),
