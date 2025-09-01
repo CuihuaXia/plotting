@@ -75,8 +75,8 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
       panel.background = element_blank(),
       plot.background  = element_blank(),
       strip.placement = "outside",
-      panel.spacing.y = unit(2 * scale, "pt"),
-      panel.spacing.x = unit(2 * scale, "pt"),
+      panel.spacing.y = unit(6 * scale, "pt"),
+      panel.spacing.x = unit(6 * scale, "pt"),
 
       ## Title
       plot.title       = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
