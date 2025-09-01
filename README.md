@@ -16,11 +16,12 @@ library(grid)
 
 ## Install and load the package
 ```R
-library(devtools)
-devtools::install_github("CuihuaXia/plotting", force = TRUE)
-## or use `remotes`
-# library(remotes)
-# remotes::install_github("CuihuaXia/plotting", force = TRUE)
+library(remotes)
+remotes::install_github("CuihuaXia/plotting", force = TRUE) 
+## or use `devtools`
+# library(devtools)
+# devtools::install_github("CuihuaXia/plotting", force = TRUE)  
+
 library(plotting)
 ```
 
@@ -29,5 +30,5 @@ library(plotting)
 
 <img width="376" alt="image" src="https://github.com/CuihuaXia/plotting/assets/31227230/74c42560-e45c-47ac-9959-01a8149bc2bf">
 
-+ `my_theme(scale = 1)`: Use my theme for ggplot2 plotting. The `scale` parameter is used to adjust the scale of font size relative to plot elements throughout the entire plot.
++ `my_theme(scale = 1, base_size = 12)`: Use my theme for ggplot2 plotting. The `scale` parameter is for adjusting the entire scale. The `base_size` is for adjusting the basic font size.
 + `copy_to_clipboard`: Write a variable (character/data frame) to the clipboard.
