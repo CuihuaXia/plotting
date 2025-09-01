@@ -66,7 +66,7 @@ library(grid)  # 用于 unit()
 
 
 
-my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
+my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "outer")) {
   frame <- match.arg(frame)
   base <- theme_bw(base_size = base_size) +
     theme(
@@ -74,9 +74,9 @@ my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
       panel.grid       = element_blank(),
       panel.background = element_blank(),
       plot.background  = element_blank(),
-      strip.placement = "outside", 
+      strip.placement = "outside",
       panel.spacing.y = unit(2 * scale, "pt"),
-      panel.spacing.x = unit(2 * scale, "pt")
+      panel.spacing.x = unit(2 * scale, "pt"),
 
       ## Title
       plot.title       = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
@@ -127,9 +127,10 @@ my_theme <- function(base_size = 12, scale = 1, frame = "panel") {
 # # apply my theme to the plot
 # ggplot() +
 #     my_theme(frame = "panel/axis/outer", scale = 1, base_size = 12)
-# # outer：整图外框
-# # panel：每个 panel 的边框
+# # panel：每个 panel 的边框，为默认值
 # # axis：坐标轴线
+# # outer：整图外框
+# # 注意本文件每行代码行尾不能留空格
 
 
         # +===============================+    ← outer（整图外框）
