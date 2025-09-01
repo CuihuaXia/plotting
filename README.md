@@ -9,7 +9,7 @@ This is an R package for plotting using ggplot2 in R.
 ## Dependencies
 Need to install and load the `ggplot2` R package first.
 ```R
-BiocManager::install("ggplot2")
+# BiocManager::install("ggplot2")  
 library(ggplot2)
 library(grid)
 ```
