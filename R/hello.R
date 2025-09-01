@@ -77,7 +77,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
 
       ## 每个facet分面图的上下和左右间距
       strip.placement = "outside",
-      panel.spacing.y = unit(6 * scale, "pt"),
+      panel.spacing.y = unit(3 * scale, "pt"),
       panel.spacing.x = unit(3 * scale, "pt"),
 
       ## Title
