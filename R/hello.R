@@ -25,9 +25,9 @@ sep <- function(line) {
 # sep("TEST")
 
 
-#################################
-# my_theme() for ggplot2 plotting
-#################################
+######################################################################
+# my_theme() for ggplot2 plotting; this is my theme for the CNS style.
+######################################################################
 library(ggplot2)
 library(grid)  # 用于 unit()
 
@@ -130,6 +130,7 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
 # # apply my theme to the plot
 # ggplot() +
 #     my_theme(frame = "panel/axis/outer", scale = 1, base_size = 12)
+
 # # panel：每个 panel 的边框，为默认值
 # # axis：坐标轴线
 # # outer：整图外框
