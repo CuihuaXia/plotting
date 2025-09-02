@@ -77,7 +77,7 @@ my_theme <- function(
       legend.text       = element_text(size = rel(0.85 * scale)),
       legend.key        = element_blank(),
       legend.background = element_blank(),
-      legend.key.size   = unit(1 * scale, "lines"),
+      legend.key.size   = unit(0.9 * scale, "lines"),
 
       ## Facet
       strip.text = element_text(size = rel(1.1 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
