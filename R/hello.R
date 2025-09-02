@@ -58,8 +58,8 @@ my_theme <- function(
       
       ## 每个facet分面图的上下和左右间距
       strip.placement  = "outside",
-      panel.spacing.y  = unit(2 * scale, "pt"),
-      panel.spacing.x  = unit(2 * scale, "pt"),
+      panel.spacing.y  = unit(2.5 * scale, "pt"),
+      panel.spacing.x  = unit(2.5 * scale, "pt"),
 
       ## Title
       plot.title = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
