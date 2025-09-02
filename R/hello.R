@@ -65,49 +65,63 @@ library(grid)  # 用于 unit()
 
 
 
-
-
-my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "outer")) {
+my_theme <- function(
+  base_size = 12, 
+  scale = 1, 
+  frame = c("panel", "axis", "outer"),   # 默认是 panel
+  strip = c("blank", "grey")  # 默认是 blank
+) {
   frame <- match.arg(frame)
+  strip <- match.arg(strip)
+
+  ## Strip background 样式选择
+  strip_background_theme <- switch(strip,
+    "blank" = element_blank(),
+    "grey"  = element_rect(fill = "grey97", colour = "black", 
+                           linetype = "solid", linewidth = 0.5 * scale)
+  )
+
   base <- theme_bw(base_size = base_size) +
     theme(
       ## Layout
       panel.grid       = element_blank(),
       panel.background = element_blank(),
       plot.background  = element_blank(),
-
+      
       ## 每个facet分面图的上下和左右间距
-      strip.placement = "outside",
-      panel.spacing.y = unit(2 * scale, "pt"),
-      panel.spacing.x = unit(2 * scale, "pt"),
+      strip.placement  = "outside",
+      panel.spacing.y  = unit(2 * scale, "pt"),
+      panel.spacing.x  = unit(2 * scale, "pt"),
 
       ## Title
-      plot.title       = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
+      plot.title = element_text(size = rel(1.3 * scale), face = "bold", hjust = 0.5, margin = margin(b = 8 * scale)),
 
       ## Axes
-      axis.title       = element_text(size = rel(1.0 * scale), colour = "black"),   # , face = "bold"
-      axis.text        = element_text(size = rel(0.85 * scale), colour = "black"),
-      axis.line        = element_line(linewidth = 0.5 * scale, colour = "black"),
-      axis.ticks       = element_line(linewidth = 0.5 * scale, colour = "black"),
-      axis.ticks.length= unit(0.15 * scale, "lines"),
+      axis.title        = element_text(size = rel(1.0 * scale), colour = "black"),
+      axis.text         = element_text(size = rel(0.85 * scale), colour = "black"),
+      axis.line         = element_line(linewidth = 0.5 * scale, colour = "black"),
+      axis.ticks        = element_line(linewidth = 0.5 * scale, colour = "black"),
+      axis.ticks.length = unit(0.15 * scale, "lines"),
 
       ## Legend
       legend.position   = "right",
-      legend.title      = element_text(size = rel(0.9 * scale)),   # , face = "bold"
+      legend.title      = element_text(size = rel(0.9 * scale)),
       legend.text       = element_text(size = rel(0.85 * scale)),
       legend.key        = element_blank(),
       legend.background = element_blank(),
       legend.key.size   = unit(1 * scale, "lines"),
 
       ## Facet
-      strip.text        = element_text(size = rel(1.1 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
-      # strip.background  = element_rect(fill = "grey97", colour = "black", linetype = "solid", linewidth = 0.5 * scale),
-      strip.background  = element_blank(),
-      strip.switch.pad.grid = unit(5 * scale, "pt"),
-      strip.switch.pad.wrap = unit(5 * scale, "pt")
+      strip.text = element_text(
+        size = rel(1.1 * scale), face = "bold",
+        margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)
+      ),
+      strip.background       = strip_background_theme,
+      strip.switch.pad.grid  = unit(5 * scale, "pt"),
+      strip.switch.pad.wrap  = unit(5 * scale, "pt")
     )
 
-  # 根据 frame 参数切换
+  ## Frame Style
   extra <- switch(frame,
     "axis" = theme(
       panel.border = element_blank(),
@@ -126,15 +140,14 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
     )
   )
 
-  base + extra
+  return(base + extra)
 }
 # # apply my theme to the plot
 # ggplot() +
-#     my_theme(frame = "panel/axis/outer", scale = 1, base_size = 12)
+#     my_theme(frame = "panel/axis/outer", strip = "blank/grey", scale = 1, base_size = 12)
 
-# # panel：每个 panel 的边框，为默认值
-# # axis：坐标轴线
-# # outer：整图外框
+# # frame: 图的边框。`panel`是只显示每个 panel 的边框，为默认值；`axis`是只显示坐标轴线；`outer`是只显示整图外框。
+# # strip: 分面小图标题的背景。`blank`是空白背景且无边框线，为默认值；`grey`是浅灰色背景且有边框线。
 # # 注意本文件每行代码行尾不能留空格
 
 
@@ -151,7 +164,6 @@ my_theme <- function(base_size = 12, scale = 1, frame = c("panel", "axis", "oute
         # |      │                     │
         # |   axes轴线：左、下             |
         # +===============================+
-
 
 
 
