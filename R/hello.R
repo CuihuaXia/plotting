@@ -34,37 +34,6 @@ library(grid)  # 用于 unit()
 
 
 # define my theme
-
-
-# my_theme <- function(scale = 1) {
-#   theme_bw() +
-#     theme(
-#       panel.grid = element_blank(),
-#       legend.position = "right",
-#       legend.text = element_text(size = 28 * scale),
-#       legend.title = element_text(size = 30 * scale, face = "bold"),
-#       legend.key.size = unit(3.5 * scale, "lines"),
-#       axis.text = element_text(size = 24 * scale, face = "bold",
-#                                colour = "grey20", hjust = .5, vjust = .5),
-#       axis.title = element_text(size = 26 * scale, face = "bold",
-#                                 colour = "grey20", angle = 0, hjust = .5, vjust = 0),
-#       axis.line = element_line(size = 1 * scale, color = "black"),
-#       axis.ticks = element_line(size = 2 * scale),
-#       plot.title = element_text(size = 30 * scale, hjust = 0.5, face = "bold"),
-#       strip.text = element_text(size = 34 * scale, face = "bold",
-#                                 margin = margin(15 * scale, 0, 15 * scale, 0)),
-#       strip.background = element_rect(fill = "#d8d8d8d9",
-#                                       color = "black", linetype = 'solid',
-
-#                                       linewidth = 1 * scale)
-#     )
-# }
-# # # apply my theme to the plot
-# # ggplot() +
-# #     my_theme(scale = 0.8)  # 可调比例
-
-
-
 my_theme <- function(
   base_size = 12, 
   scale = 1, 
@@ -77,9 +46,7 @@ my_theme <- function(
   ## Strip background 样式选择
   strip_background_theme <- switch(strip,
     "blank" = element_blank(),
-    "grey"  = element_rect(fill = "grey97", colour = "black", 
-                           linetype = "solid", linewidth = 0.5 * scale)
-  )
+    "grey"  = element_rect(fill = "grey97", colour = "black", linetype = "solid", linewidth = 0.5 * scale))
 
   base <- theme_bw(base_size = base_size) +
     theme(
@@ -112,10 +79,7 @@ my_theme <- function(
       legend.key.size   = unit(1 * scale, "lines"),
 
       ## Facet
-      strip.text = element_text(
-        size = rel(1.1 * scale), face = "bold",
-        margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)
-      ),
+      strip.text = element_text(size = rel(1.1 * scale), face = "bold", margin = margin(t = 5 * scale, r = 0, b = 5 * scale, l = 0)),
       strip.background       = strip_background_theme,
       strip.switch.pad.grid  = unit(5 * scale, "pt"),
       strip.switch.pad.wrap  = unit(5 * scale, "pt")
